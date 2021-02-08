@@ -1,0 +1,37 @@
+<p>card works!</p>
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ title | uppercase }}</mat-card-title>
+      <mat-card-subtitle>{{subTitleCard}}</mat-card-subtitle>
+    </mat-card-header>
+    <img appClick mat-card-image src="{{imgSrc}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p *ngIf="description; else defaultDescription">
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+      <ng-template #defaultDescription>
+        HOLAAAAAAAAAAAAAAAAAAAAAA
+
+      </ng-template>
+      <p *ngFor="let skill of skills, index as i">
+        {{i+1}} - {{skill}}
+      </p>
+      <div [ngSwitch]="category">
+        <p *ngSwitchCase="'Dog'">El shiba es un perro</p>
+        <p *ngSwitchCase="'Cat'">El shiba es un gato</p>
+        <p *ngSwitchDefault>El shiba simplemente es</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="chgImg1()">IMG1</button>
+      <button mat-button (click)="chgImg2()">IMG2</button>
+    </mat-card-actions>
+    <mat-card-actions>
+      <input [(ngModel)]="nameBreed" (keyup)="showVar()">
+      <p>Name of breed: {{nameBreed | trim}}</p>
+      <p>Price: {{ val | currency:'CLP' }}</p>
+    </mat-card-actions>
+  </mat-card>
