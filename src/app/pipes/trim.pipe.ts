@@ -5,9 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TrimPipe implements PipeTransform {
 
-  transform(value: any): any {
+  transform(value: any, ...params:any[]): any {
     let trimed : any = value.replace(" ", "").trim();
-    console.log('arguments pipe trim, -->', trimed)
+    if(params[0] == 'lowercase'){
+      trimed = trimed.toLowerCase();
+    }
+    console.log('params value pipe trim, -->', params);
+    console.log('original value pipe trim, -->', value);
+    console.log('arguments pipe trim, -->', trimed);
     return trimed;
   }
 

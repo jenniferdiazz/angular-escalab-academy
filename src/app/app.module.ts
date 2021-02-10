@@ -15,6 +15,23 @@ import { MatButtonModule } from '@angular/material';
 import { CardComponent } from './components/card/card.component';
 import { ClickDirective } from './directives/handlerEvent/click.directive';
 import { TrimPipe } from './pipes/trim.pipe';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { CharactersComponent } from './components/characters/characters.component';
+import { CharacterComponent } from './components/character/character.component';
+import { CharactersModule} from './characters/characters.module';
+
+import { PopupComponent } from './components/popup/popup.component';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
+
+import { ReactiveFormsModule } from '@angular/forms'
+
+
 
 @NgModule({
   declarations: [
@@ -23,15 +40,27 @@ import { TrimPipe } from './pipes/trim.pipe';
     Comp2Component,
     CardComponent,
     ClickDirective,
-    TrimPipe
+    TrimPipe,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    CharactersComponent,
+    CharacterComponent,
+    PopupComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
+    CharactersModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-  FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig) ,
+    AngularFireAuthModule,
+    ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

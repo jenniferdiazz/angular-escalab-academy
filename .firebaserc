@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-ang6-c89c9": {
+      "hosting": {
+        "my-app": [
+          "fir-ang6-c89c9"
+        ]
+      }
+    }
+  }
+}

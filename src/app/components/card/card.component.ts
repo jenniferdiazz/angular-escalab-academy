@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
   public img1: string = 'https://material.angular.io/assets/img/examples/shiba1.jpg'
   public img2: string ='https://material.angular.io/assets/img/examples/shiba2.jpg'
  public imgSrc : string ='https://material.angular.io/assets/img/examples/shiba2.jpg';
- public nameBreed: string = 'Shiba Inu'; 
+ public nameBreed: string = 'ShibaInu moco'; 
  public val: number = 1250;
 
  @Input() subTitle : string;

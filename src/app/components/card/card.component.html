@@ -31,7 +31,7 @@
     </mat-card-actions>
     <mat-card-actions>
       <input [(ngModel)]="nameBreed" (keyup)="showVar()">
-      <p>Name of breed: {{nameBreed | trim}}</p>
+      <p>Name of breed: {{nameBreed | trim: 'lowercase'}}</p>
       <p>Price: {{ val | currency:'CLP' }}</p>
     </mat-card-actions>
   </mat-card>

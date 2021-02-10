@@ -1,11 +1,12 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<router-outlet name="popup"></router-outlet>
+
+
 <app-card (myEvent)="fatherFunxx($event)" 
 [subTitle]="subTitleAPP" 
 [description]="false">
 </app-card>
 <p>{{titleSon}}</p>
-<!-- <app-comp1></app-comp1>
-
-
-
-
-<router-outlet></router-outlet> -->
+<!-- <app-comp1></app-comp1> -->

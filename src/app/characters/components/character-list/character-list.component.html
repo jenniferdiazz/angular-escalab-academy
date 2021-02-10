@@ -1,0 +1,6 @@
+<p>Personajes</p>
+<ul *ngFor= "let character of allCharacters">
+    <li> {{ character.name }}</li>
+    <a [routerLink]="['characterSingle', character.id]">Detalles</a>
+</ul>
+<router-outlet></router-outlet>
