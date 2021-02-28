@@ -1,7 +1,9 @@
 export interface User {
+    email:string,
     name:string,
-    lastName:string,
-    age:number
+    phoneNumber : string,
+    profile:string,
+    uid:string
 }
 export interface Group{
     user:User,

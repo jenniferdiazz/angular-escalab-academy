@@ -12,8 +12,10 @@ export class Comp1Component implements OnInit {
   public age: number = 22;
   public myUser: User = {
     name:"Juan",
-    lastName:"Cortez",
-    age:12
+    email:"juan@gmail.com",
+    phoneNumber:"212132",
+    profile:"deadas",
+    uid    : "dsaddasdaa"
   }
   public myGroup: Group = {
     user: this.myUser,

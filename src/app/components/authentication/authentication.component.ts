@@ -15,7 +15,7 @@ export class AuthenticationComponent implements OnInit {
     return this.loginForm.get('email')
   };
   public loginForm = new FormGroup({
-    email : new FormControl('', [Validators.required , Validators.email]),
+    email : new FormControl('jennifer123@gmail.com', [Validators.required , Validators.email]),
     pass: new FormControl('', [Validators.required])
   })
   constructor(

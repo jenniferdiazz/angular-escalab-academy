@@ -48,4 +48,14 @@ export class FirebaseService {
       console.log('error current user -->', error)
     }
   }
+
+  async registerUser(email: string, pass: string){
+    try{
+      const respRegister = await this.angularFireAuth.auth.createUserWithEmailAndPassword(email, pass);
+      console.log('resp registerUser -->', respRegister);
+      return respRegister.user;
+    }catch(error){
+      console.log('error registeruser -->', error)
+    }
+  }
 }

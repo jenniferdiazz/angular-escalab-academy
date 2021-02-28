@@ -6,6 +6,7 @@ import { CharactersComponent } from './components/characters/characters.componen
 import { PopupComponent } from './components/popup/popup.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { LoggedGuard } from './guards/logged.guard';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {path:'popupAlert', component:PopupComponent, outlet:'popup'},
@@ -13,7 +14,7 @@ const routes: Routes = [
   // {path:'characters', component:CharactersComponent},
   // {path:'character/:id', component:CharacterComponent},
   {path:'login', component: AuthenticationComponent},
-
+  {path:'register', component:RegisterComponent},
   {path:'**', component:HomeComponent, pathMatch:'prefix'}
 
 ];

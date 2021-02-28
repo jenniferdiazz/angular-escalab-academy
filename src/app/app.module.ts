@@ -27,9 +27,12 @@ import { PopupComponent } from './components/popup/popup.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component'
 
 
 
@@ -47,7 +50,8 @@ import { ReactiveFormsModule } from '@angular/forms'
     CharactersComponent,
     CharacterComponent,
     PopupComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +63,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig) ,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     ReactiveFormsModule
     
   ],
