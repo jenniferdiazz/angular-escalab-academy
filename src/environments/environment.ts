@@ -13,7 +13,9 @@
     storageBucket: "fir-ang6-c89c9.appspot.com",
     messagingSenderId: "262220170664",
     appId: "1:262220170664:web:83d7e7a28ab174dc89499d"
-  }
+  },
+  endPointCharacter : 'https://rickandmortyapi.com/api/character',
+  token:'secureToken'
 }
  
 

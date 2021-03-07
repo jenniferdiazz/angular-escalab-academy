@@ -9,10 +9,12 @@ import { LoggedGuard } from './guards/logged.guard';
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
+
   {path:'popupAlert', component:PopupComponent, outlet:'popup'},
   {path:'home', component:HomeComponent, canActivate:[LoggedGuard]},
   // {path:'characters', component:CharactersComponent},
   // {path:'character/:id', component:CharacterComponent},
+  {path:'characters', loadChildren:()=>import("./characters/characters.module").then(mod => mod.CharactersModule)},
   {path:'login', component: AuthenticationComponent},
   {path:'register', component:RegisterComponent},
   {path:'**', component:HomeComponent, pathMatch:'prefix'}

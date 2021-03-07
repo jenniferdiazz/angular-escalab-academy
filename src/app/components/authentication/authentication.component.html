@@ -16,7 +16,12 @@
                 <input type="password" class="form-control" placeholder="password" formControlName="pass">
             </div>
             <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert alert-danger">
-                <div *ngIf="pass.errors.required"> Requerido </div>
+                <div *ngIf="pass.errors.required">
+                     Requerido 
+                </div>
+                <div *ngIf="pass.errors.passwordValidation">
+                    {{pass.errors.passwordValidation.message}}
+               </div>
             </div>
             <button [disabled]="loginForm.invalid" class="btn btn-primary btn-lg">Login</button>
         </form>

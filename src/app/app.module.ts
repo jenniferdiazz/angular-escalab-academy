@@ -20,7 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { CharacterComponent } from './components/character/character.component';
-import { CharactersModule} from './characters/characters.module';
+//import { CharactersModule} from './characters/characters.module';
 
 import { PopupComponent } from './components/popup/popup.component';
 
@@ -32,9 +32,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { RegisterComponent } from './components/register/register.component'
+import { RegisterComponent } from './components/register/register.component';
+import { PasswordDirective } from './directives/validations/password.directive'
 
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeaderInterceptorService } from './interceptors/header-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -51,11 +53,12 @@ import { RegisterComponent } from './components/register/register.component'
     CharacterComponent,
     PopupComponent,
     AuthenticationComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordDirective
   ],
   imports: [
     BrowserModule,
-    CharactersModule,
+    //CharactersModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
@@ -64,10 +67,17 @@ import { RegisterComponent } from './components/register/register.component'
     AngularFireModule.initializeApp(environment.firebaseConfig) ,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  //va a estar por encima de todo
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HeaderInterceptorService,
+    //en el caso que tengamos mas de 1 interceptor
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

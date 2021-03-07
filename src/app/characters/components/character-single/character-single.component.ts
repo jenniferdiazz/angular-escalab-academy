@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RickAndMortyService } from '../../../services/rick-and-morty.service';
 import { ActivatedRoute } from '@angular/router';
+import { Character } from '../../../interfaces/character';
 
 @Component({
   selector: 'app-character-single',
@@ -8,14 +9,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./character-single.component.css']
 })
 export class CharacterSingleComponent implements OnInit {
-  public character: any;
+  public character: Character;
   constructor(
     private rickAndMortyS : RickAndMortyService,
     private activatedRoute : ActivatedRoute
   ) {
     activatedRoute.params.subscribe(params =>{
       console.log('params -->', params)
-      this.character= rickAndMortyS.getCharacterById(params.id);
+      //this.character= rickAndMortyS.getCharacterById(params.id);
+      rickAndMortyS.getCharacterById(params.id).subscribe(respCharacter =>{
+          this.character = respCharacter;
+      })
     })
    }
 

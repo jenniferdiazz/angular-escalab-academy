@@ -10,12 +10,15 @@ export class Comp1Component implements OnInit {
   public name: string = 'Gustavo';
   public lastName : string = 'Gutierrez';
   public age: number = 22;
-  public myUser: User = {
+ 
+  //public myUser: User
+  public myUser: any = {
     name:"Juan",
     email:"juan@gmail.com",
-    phoneNumber:"212132",
+    phoneNumber: [] ,
     profile:"deadas",
-    uid    : "dsaddasdaa"
+    uid    : "dsaddasdaa",
+    newsletter: false,
   }
   public myGroup: Group = {
     user: this.myUser,

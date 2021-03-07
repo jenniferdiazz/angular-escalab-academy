@@ -12,7 +12,8 @@ import {takeUntil} from 'rxjs/operators'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit,OnDestroy {
-  public myUser: User ={
+  //puclic Myuser:User ;
+  public myUser: any ={
     email:'',
     phoneNumber:'',
     profile:'',
